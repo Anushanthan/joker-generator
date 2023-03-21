@@ -1,12 +1,12 @@
-const jokeEl = document.getElementById('joke');
-const jokeBtn = document.getElementById('jokeBtn');
+const jokeEl = document.getElementById('joker');
+const jokeBtn = document.getElementById('jokerBtn');
 
-jokeBtn.addEventListener('click', generateJoke);
+jokeBtn.addEventListener('click', generateJoker);
 
-generateJoke();
+generateJoker();
 
 // USING ASYNC/AWAIT
-async function generateJoke() {
+async function generateJoker() {
     const config = {
         headers: {
             Accept: 'application/json',
@@ -17,11 +17,10 @@ async function generateJoke() {
 
     const data = await res.json();
 
-    jokeEl.innerHTML = data.joke;
-}
+    jokerEl.innerHTML = data.Joker
 
 // USING .then()
-// function generateJoke() {
+// function generateJoker() {
 //   const config = {
 //     headers: {
 //       Accept: 'application/json',
@@ -31,6 +30,6 @@ async function generateJoke() {
 //   fetch('https://icanhazdadjoke.com', config)
 //     .then((res) => res.json())
 //     .then((data) => {
-//       jokeEl.innerHTML = data.joke
+//       jokeEl.innerHTML = data.joker
 //     })
 // }
